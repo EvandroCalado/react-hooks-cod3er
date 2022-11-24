@@ -3,36 +3,32 @@ import PageTitle from "../../components/layout/PageTitle";
 import SectionTitle from "../../components/layout/SectionTitle";
 
 const merge = (s1, s2) => {
- const concat = s1 + s2
- return concat
-}
+  return [... s1].map((e, i) => `${e}${s2[i] || ""}`).join("")
+};
 
 const UseRef = (props) => {
   const [value1, setValue1] = useState("");
   const [value2, setValue2] = useState("");
 
   const count = useRef(0);
-  const concat = useRef()
   const myInput1 = useRef(null);
   const myInput2 = useRef(null);
 
-
-
   useEffect(
     function () {
-      count.current++
-      myInput2.current.focus()
+      count.current++;
+      myInput2.current.focus();
     },
     [value1]
   );
+
   useEffect(
     function () {
-      count.current++
-      myInput1.current.focus()
+      count.current++;
+      myInput1.current.focus();
     },
     [value2]
   );
-
 
   return (
     <div className="UseRef">
