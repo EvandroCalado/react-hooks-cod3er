@@ -1,4 +1,5 @@
 import reducer from "./reducers";
+import { numberAdd2 } from "./actions/number"
 
 const initialState = {
   cart: [],
@@ -7,4 +8,8 @@ const initialState = {
   number: 0,
 };
 
-export { reducer, initialState };
+export { 
+  reducer, 
+  numberAdd2, 
+  initialState 
+};
